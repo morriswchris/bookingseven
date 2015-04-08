@@ -9,6 +9,12 @@ Adds in extra event information when looking at house seven (the soho house even
 * Adds a confirmation button to booked events
 
 ##Installation
-Simply download the zip of this repository, and extract.
-Navigate to (chrome://extensions) and check ```Developer Mode```, and choose ```Load unpacked extension```.
+Simply download the [zip](https://github.com/morriswchris/bookingseven/archive/master.zip) of this repository, and extract.
+Navigate to [chrome://extensions](chrome://extensions) and check ```Developer Mode```, and choose ```Load unpacked extension```.
 You will need to provide the url for where you unzipped the extension.
+
+---
+
+*_This extension will only work with the Google Chrome Web Browser._
+
+*_This extension was not developed by houseseven._
