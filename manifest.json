@@ -1,0 +1,13 @@
+{
+  "name": "HouseSevenBookingDetails",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "Adds the number of guests you are allowed, and are booked with for events, as well as a confirm button once booked",
+  "permissions": ["tabs", "https://houseseven.com/*"],
+  "content_scripts" : [{
+    "matches": ["https://*/*"],
+    "js" : ["contentscript.js"],
+    "run_at": "document_end"
+  }],
+  "web_accessible_resources": ["bookerseven.js"]
+}
