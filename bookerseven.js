@@ -1,5 +1,6 @@
 (function($) {
   var urlRegex = new RegExp("events-summary\/", "i");
+  var eventSelector = ".events__item__details";
   $.ajaxSetup({
     success: function(data){
       if(urlRegex.exec(this.url)){ //we have event info
@@ -12,11 +13,11 @@
         if(data.booking) {
           if(data.booking.state === "booked" && $event){
             confirmButton = "<a href='https://houseseven.com/e/"+data.id+"/confirm' class='simple-button' style='float: right;'>Confirm Booking</a> ";
-            $event.find(".event-listing-information").append(confirmButton);
+            $event.find(eventSelector).prepend(confirmButton);
           }
           else if(data.booking.state === "confirmed" && $event) {
             confirmButton = "<a href='https://houseseven.com/e/"+data.id+"/cancel' class='simple-button button-cancel' style='float: right;'>Cancel Booking</a> ";
-            $event.find(".event-listing-information").append(confirmButton);
+            $event.find(eventSelector).prepend(confirmButton);
           }
           maxGuests = data.booking.tickets - 1 + " / " + maxGuests;
         }
@@ -25,7 +26,7 @@
             var $data = $(html),
               date = $data.find(".booking-booking_not_yet_open");
               if(date && date[0]){
-                $event.find(".event-listing-information").append("<span class='event-listing-badge event-listing-booked visible' style='float:left;position: relative !important;margin-left: 80px;'>" + date[0].innerText.trim() + "</span>");
+                $event.find(eventSelector).prepend("<span class='event-listing-badge event-listing-booked visible'>" + date[0].innerText.trim() + "</span>");
               }
           });
         }
