@@ -5,6 +5,7 @@
     success: function(data){
       if(urlRegex.exec(this.url)){ //we have event info
         var maxGuests = data.max_tickets_per_booking - 1,
+        points = data.screening_points_cost,
         guestsStr = " ( guests: ",
         guestsStrEnd = " ) ",
         guests = "",
@@ -30,7 +31,7 @@
               }
           });
         }
-        data.message += guestsStr + maxGuests + guestsStrEnd;
+        data.message += guestsStr + maxGuests + " | points: " + points + guestsStrEnd;
       }
     }
   });
